@@ -47,14 +47,3 @@ public class Solution {
         return head.next;
     }
 }
-
-说明： 可以把中间的那个helper 改成： 
-   private ListNode helper(ListNode[] lists, int start, int end){
-        if(start == end){
-            return lists[start];
-        }
-        int mid = (end - start) / 2 + start;
-        ListNode temp1 = helper(lists, start, mid);
-        ListNode temp2 = helper(lists, mid + 1, end);
-        return merge(temp1, temp2);
-    }
